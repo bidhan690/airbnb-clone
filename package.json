@@ -5,9 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "node server.js",
+    "start": "func start",
     "lint": "next lint"
   },
+  "main": "build/standalone/server.js",
   "dependencies": {
     "@hookform/resolvers": "^3.3.1",
     "@next-auth/prisma-adapter": "^1.0.7",
