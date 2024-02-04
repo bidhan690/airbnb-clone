@@ -50,11 +50,11 @@ jobs:
           mv ./build/static ./build/standalone/build
           mv ./public ./build/standalone
 
-      - name: "Run Azure Functions Action"
-        id: fa 
-        uses: Azure/functions-action@v1
+      - name: "Deploy to Azure Web App"
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v2
         with:
-          app-name: "airbnb-clone"
+          app-name: "airbnb-clone-1"
           slot-name: "Production"
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C3F84D9735A54F6A9D45DAC07C105A63 }}
-          package: ./build/standalone
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
+          package: ./src/build/standalone
